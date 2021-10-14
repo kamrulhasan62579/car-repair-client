@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, useHistory } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import jwt_decode from "jwt-decode";
 
@@ -31,6 +31,8 @@ const PrivateRoute = ({ children, ...rest }) => {
        const currentTime = new Date().getTime() /1000;
        return decodedToken.exp > currentTime;
     }
+
+
     return (
         <Route
       {...rest}

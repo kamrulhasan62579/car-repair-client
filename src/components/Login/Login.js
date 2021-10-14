@@ -6,6 +6,8 @@ import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthPro
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from "react-router-dom";
 import loginImg from "../../image/logo.png"
+import jwt_decode from "jwt-decode";
+
 
 
 
@@ -29,7 +31,7 @@ const app = initializeApp(firebaseConfig);
 
 const Login = () => {
 
-            const [err, setErr] = useState({})
+        const [err, setErr] = useState({})
 
 
          const auth = getAuth();
@@ -42,6 +44,8 @@ const Login = () => {
     console.log(loggedInUser);
      const [newUser, setNewUser] = useState(false)
      const { register, handleSubmit, watch, formState: { errors } } = useForm();
+
+ 
 
      const onSubmit = data => {
        if(newUser){

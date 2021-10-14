@@ -2,7 +2,7 @@ import jwt_decode from "jwt-decode";
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
 import { UserContext } from "../../../App";
 import smallBg from "../../../image/logo.png";
@@ -37,6 +37,7 @@ import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import HomeElement from "../../Home/HomeElement/HomeElement";
 
 const drawerWidth = 240;
 
@@ -51,11 +52,13 @@ function ResponsiveDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
   const auth = getAuth();
+  const history = useHistory();
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
         sessionStorage.clear();
         setLoggedInUser({});
+        history.push("/home")
       })
       .catch(error => {
         console.log(error);
@@ -236,6 +239,9 @@ function ResponsiveDrawer(props) {
               <Route path="/account/book">
                 <BookPage />
               </Route>
+               <Route path="/home">
+               <HomeElement></HomeElement>
+             </Route>
               <Route path="/tripBook/:id">
                 <TripBooking />
               </Route>
