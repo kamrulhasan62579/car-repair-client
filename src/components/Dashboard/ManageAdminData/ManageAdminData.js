@@ -106,7 +106,7 @@ export default function ManageAdminData({ rows }) {
   const handleClick = id => {
     console.log("Clicked", id);
     fetch(
-      `https://desolate-dusk-36034.herokuapp.com/36034.herokuapp.com/deleteAdmin/${id}`,
+      `https://desolate-dusk-36034.herokuapp.com/deleteAdmin/${id}`,
       {
         method: "DELETE",
       }
