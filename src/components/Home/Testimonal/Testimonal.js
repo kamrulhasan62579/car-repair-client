@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Loading from "../../Loading/Loading";
 import TestimonalContent from "../TestimonalContent/TestimonalContent";
+import "./Testimonal.css"
 
 const Testimonal = () => {
   const [review, setReview] = useState([]);
@@ -10,7 +11,7 @@ const Testimonal = () => {
       .then(data => setReview(data));
   }, []);
   return (
-    <div style={{ padding: "0px 50px" }}>
+    <div className="testimonal-styling">
       <h2 className="text-center">What's Our Client Say</h2>
       {review.length === 0 ? (
         <Loading />

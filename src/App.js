@@ -16,6 +16,7 @@ import Navbar from './components/Shared/Navbar/Navbar';
 import Footer from './components/Shared/Footer/Footer';
 import Login from './components/Login/Login';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
+import Contact from './components/Home/Contact/Contact';
 
 
 export const UserContext = createContext();
@@ -42,6 +43,11 @@ function App() {
              <Route path="/bookPage">
                <Navbar></Navbar>
                 <BookPage></BookPage>
+                <Footer></Footer>
+             </Route>
+              <Route path="/contactPage">
+               <Navbar></Navbar>
+                <Contact></Contact>
                 <Footer></Footer>
              </Route>
               <Route path="/loading">
