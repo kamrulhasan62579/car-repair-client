@@ -2,7 +2,7 @@
 
 Live Demo: [Travel Agency](https://car-repair-d58cb.web.app/).
 
-Email: [My Email](hasan.pust.bd@gmail.com).
+Email: hasan.pust.bd@gmail.com
 
 ## Features:
 1. Users can book a trip
